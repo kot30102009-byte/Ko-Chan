@@ -11,7 +11,6 @@ def get_ai_response(user_query):
     except:
         return "မှတ်ဉာဏ်ဖိုင် ရှာမတွေ့ပါ။"
 
-# စကားပြောခန်း စတင်ခြင်း
 print("Ko-Chan AI စနစ် စတင်ပြီ! (ထွက်ရန် 'bye' ဟု ရိုက်ပါ)")
 while True:
     user_input = input("သင်: ")
