@@ -1,18 +1,23 @@
-# Ko-Chan AI (Knowledge Reader)
+# Ko-Chan AI (Interactive Chat)
 def get_ai_response(user_query):
     try:
-        # knowledge.txt ထဲက စာတွေကို ဖတ်ခြင်း
         with open("knowledge.txt", "r", encoding="utf-8") as f:
             knowledge = f.read()
         
-        # မေးခွန်းကို အချက်အလက်ထဲမှာ ရှာခြင်း
         if user_query in knowledge:
-            return f"ကျွန်ုပ်၏ မှတ်ဉာဏ်ထဲတွင် တွေ့ရှိသည်မှာ: {knowledge}"
+            return f"Ko-Chan မှတ်မိတယ်: {knowledge}"
         else:
-            return "ကျွန်ုပ်၏ မှတ်ဉာဏ်ထဲတွင် အချက်အလက် မတွေ့ရှိပါ။ သင် ပိုမို ဖြည့်စွက်ပေးပါဦး။"
-    except Exception as e:
-        return "မှတ်ဉာဏ်ဖိုင် ဖတ်၍မရပါ။"
+            return "အဲ့ဒါကိုတော့ ကျွန်တော် မသိသေးပါဘူး။ knowledge.txt ထဲမှာ ထည့်ပေးပါဦး။"
+    except:
+        return "မှတ်ဉာဏ်ဖိုင် ရှာမတွေ့ပါ။"
 
-# စမ်းသပ်ခြင်း
-query = "Python"
-print(get_ai_response(query))
+# စကားပြောခန်း စတင်ခြင်း
+print("Ko-Chan AI စနစ် စတင်ပြီ! (ထွက်ရန် 'bye' ဟု ရိုက်ပါ)")
+while True:
+    user_input = input("သင်: ")
+    if user_input.lower() == 'bye':
+        print("Ko-Chan: နောက်မှ ပြန်တွေ့မယ်!")
+        break
+    response = get_ai_response(user_input)
+    print("Ko-Chan:", response)
+    
